@@ -1,0 +1,15 @@
+[user]
+	name = Guy Rozen
+	email = guy.rozen@klarna.com
+[alias]
+	co = checkout
+	ci = checkin
+[core]
+	editor = mvim -f
+[github]
+	user = Guy Rozen
+	token = 411a75b09c1ab95401e42d0099e613e3
+[push]
+	default = tracking
+[color]
+	ui = always

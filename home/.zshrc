@@ -35,6 +35,7 @@ export PATH=/Users/grozen/bin/android-sdk-macosx/platform-tools:/Users/grozen/bi
 # Some extra aliases
 alias prails='pry -r ./config/environment'
 alias mvim='nocorrect mvim'
+alias vi='/usr/local/Cellar/macvim/7.3-65/MacVim.app/Contents/MacOS/Vim'
 alias gff='nocorrect git flow feature'
 
 # This lets Kred find the cracklib dictionary

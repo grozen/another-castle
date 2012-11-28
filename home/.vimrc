@@ -59,7 +59,6 @@ let g:syntastic_auto_loc_list=1
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
-Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'ecomba/vim-ruby-refactoring'
 
 Bundle 'tpope/vim-haml'
@@ -74,16 +73,19 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'alfredodeza/jacinto.vim'
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
+Bundle 'ervandew/supertab'
+
 Bundle 'sjl/badwolf'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomasr/molokai'
 Bundle 'zaiste/Atom'
 Bundle 'w0ng/vim-hybrid'
+Bundle 'wgibbs/vim-irblack'
 
 
 " General
 filetype plugin indent on
-colorscheme hybrid
+colorscheme ir_black
 syntax on
 
 set guifont=Menlo\ Regular:h15
@@ -97,22 +99,13 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " Yank from current cursor position to end of line
 map Y y$
-" Yank content in OS's clipboard. `o` stands for "OS's Clipoard".
-vnoremap <leader>yo "*y
-" Paste content from OS's clipboard
-nnoremap <leader>po "*p
+set clipboard=unnamed
 
 " clear highlight after search
 noremap <silent><Leader>/ :nohls<CR>
 
 " better ESC
 inoremap jk <Esc>
-
-nmap <silent> <leader>hh :set invhlsearch<CR>
-nmap <silent> <leader>ll :set invlist<CR>
-nmap <silent> <leader>nn :set invnumber<CR>
-nmap <silent> <leader>pp :set invpaste<CR>
-nmap <silent> <leader>ii :set invrelativenumber<CR>
 
 " Seriously, guys. It's not like :W is bound to anything anyway.
 command! W :w
@@ -145,7 +138,7 @@ set nolazyredraw
 " Disable the macvim toolbar
 set guioptions-=T
 
-set listchars=tab:  ,trail:⌴,extends:>,precedes:<
+set listchars=tab:▸\ ,trail:⌴,extends:>,precedes:<
 
 set notimeout
 set ttimeout

@@ -38,6 +38,9 @@ alias mvim='nocorrect mvim'
 alias vi='/usr/local/Cellar/macvim/7.3-65/MacVim.app/Contents/MacOS/Vim'
 alias gff='nocorrect git flow feature'
 
+# Postgres data folder
+export PGDATA=/usr/local/var/postgres
+
 # This lets Kred find the cracklib dictionary
 export CRACKLIB_DICTPATH=/usr/local/share/cracklib-words
 

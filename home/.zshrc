@@ -31,6 +31,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/Users/grozen/Work/Klarna/OTP/install/R14B03/bin
 export PATH=/Users/grozen/bin/android-sdk-macosx/platform-tools:/Users/grozen/bin/android-sdk-macosx/platforms:/Users/grozen/bin/android-sdk-macosx/tools:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
 
 # Some extra aliases
 alias prails='pry -r ./config/environment'
@@ -38,13 +39,14 @@ alias mvim='nocorrect mvim'
 alias vi='/usr/local/Cellar/macvim/7.3-65/MacVim.app/Contents/MacOS/Vim'
 alias gff='nocorrect git flow feature'
 
+# Set vi as the editor
+export EDITOR='mvim -v'
+
 # Postgres data folder
 export PGDATA=/usr/local/var/postgres
 
 # This lets Kred find the cracklib dictionary
 export CRACKLIB_DICTPATH=/usr/local/share/cracklib-words
-
-export NODE_PATH=/usr/local/lib/node_modules
 
 # RVM things
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

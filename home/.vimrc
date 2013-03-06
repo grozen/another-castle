@@ -68,6 +68,8 @@ Bundle 'tpope/vim-markdown'
 Bundle 'cakebaker/scss-syntax.vim'
 au BufRead,BufNewFile *.scss set filetype=scss
 
+Bundle 'skammer/vim-css-color'
+
 Bundle 'kchmck/vim-coffee-script'
 
 Bundle 'alfredodeza/jacinto.vim'

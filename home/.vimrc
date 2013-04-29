@@ -72,6 +72,8 @@ Bundle 'skammer/vim-css-color'
 
 Bundle 'kchmck/vim-coffee-script'
 
+Bundle 'wavded/vim-stylus'
+
 Bundle 'alfredodeza/jacinto.vim'
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 

@@ -85,12 +85,14 @@ Bundle 'tomasr/molokai'
 Bundle 'zaiste/Atom'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'wgibbs/vim-irblack'
+Bundle 'altercation/vim-colors-solarized'
 
 
 " General
 filetype plugin indent on
-colorscheme ir_black
 syntax on
+set background=dark
+colorscheme solarized
 
 set guifont=Menlo\ Regular:h15
 let macvim_hig_shift_movement = 1
@@ -104,6 +106,9 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " Yank from current cursor position to end of line
 map Y y$
 set clipboard=unnamed
+
+" Remove annoying balloons on hover
+set noballooneval
 
 " clear highlight after search
 noremap <silent><Leader>/ :nohls<CR>

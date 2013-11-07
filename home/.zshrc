@@ -37,12 +37,22 @@ export PATH=/usr/local/share/npm/bin:$PATH
 
 # Some extra aliases
 alias prails='pry -r ./config/environment'
-alias mvim='nocorrect mvim'
-alias vi='/usr/local/Cellar/macvim/7.3-65/MacVim.app/Contents/MacOS/Vim'
 alias gff='nocorrect git flow feature'
 
-# Set vi as the editor
-export EDITOR='mvim -v'
+case `uname` in
+  Darwin)
+    alias mvim='nocorrect mvim'
+    alias vi='/usr/local/Cellar/macvim/7.3-65/MacVim.app/Contents/MacOS/Vim'
+
+    # Set vi as the editor
+    export EDITOR='mvim -v'
+    ;;
+  Linux)
+    # Set vi as the editor
+    export EDITOR='gvim -v'
+    ;;
+esac
+
 
 # Postgres data folder
 export PGDATA=/usr/local/var/postgres
@@ -56,3 +66,5 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+[ -s "/home/grozen/.scm_breeze/scm_breeze.sh" ] && source "/home/grozen/.scm_breeze/scm_breeze.sh"

@@ -4,8 +4,6 @@
 [alias]
 	co = checkout
 	ci = checkin
-[core]
-	editor = mvim -f
 [github]
 	user = Guy Rozen
 	token = 411a75b09c1ab95401e42d0099e613e3

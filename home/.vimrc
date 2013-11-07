@@ -42,9 +42,19 @@ Bundle 'Spaceghost/vim-matchit'
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_extensions = ['tag']
 
-Bundle 'Lokaltog/vim-powerline'
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_cache_enabled = 1
+Bundle 'bling/vim-airline'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" old vim-powerline symbols
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
 
 Bundle 'majutsushi/tagbar'
 nmap <leader>t :TagbarToggle<CR>
@@ -94,7 +104,7 @@ syntax on
 set background=dark
 colorscheme solarized
 
-set guifont=Menlo\ Regular:h15
+set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline\ 10
 let macvim_hig_shift_movement = 1
 
 " Set 5 lines to the cursor - when moving vertically

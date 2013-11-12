@@ -115,7 +115,15 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " Yank from current cursor position to end of line
 map Y y$
-set clipboard=unnamed
+
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin\n"
+    set clipboard=unnamed
+  else
+    set clipboard=unnamedplus
+  endif
+endif
 
 " Remove annoying balloons on hover
 set noballooneval

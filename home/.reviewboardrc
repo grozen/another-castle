@@ -1,1 +1,1 @@
-REVIEWBOARD_URL = "https://reviewboard.hq.kred"
+REVIEWBOARD_URL = "https://reviewboard.internal.machines"

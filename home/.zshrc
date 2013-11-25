@@ -24,20 +24,30 @@ DEFAULT_USER="grozen"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
+DEFAULT_RUBY="ruby-1.9.3-p484"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git bundler)
 
-# RVM things
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-source $ZSH/oh-my-zsh.sh
-
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/Users/grozen/Work/Klarna/OTP/install/R14B03/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH
 export PATH=/Users/grozen/bin/android-sdk-macosx/platform-tools:/Users/grozen/bin/android-sdk-macosx/platforms:/Users/grozen/bin/android-sdk-macosx/tools:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
+#
+# Set up chruby
+export PATH=/usr/local/share/chruby:$PATH
+case `uname` in
+  Darwin)
+    source /usr/local/opt/chruby/share/chruby/chruby.sh
+    ;;
+  Linux)
+    source /usr/local/share/chruby/chruby.sh
+    ;;
+esac
+chruby $DEFAULT_RUBY
+
+source $ZSH/oh-my-zsh.sh
 
 # Some extra aliases
 alias prails='pry -r ./config/environment'
@@ -57,7 +67,6 @@ case `uname` in
     ;;
 esac
 
-
 # Postgres data folder
 export PGDATA=/usr/local/var/postgres
 
@@ -68,3 +77,6 @@ export CRACKLIB_DICTPATH=/usr/local/share/cracklib-words
 export PATH="/usr/local/heroku/bin:$PATH"
 
 [ -s "/home/grozen/.scm_breeze/scm_breeze.sh" ] && source "/home/grozen/.scm_breeze/scm_breeze.sh"
+
+# Environment variable for working with cloudstack Kred
+export KRED_HOST="cloud-testing-ci-114"

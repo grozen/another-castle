@@ -11,3 +11,5 @@
 	default = tracking
 [color]
 	ui = always
+[core]
+	excludesfile = /Users/grozen/.gitignore

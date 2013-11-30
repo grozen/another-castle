@@ -49,6 +49,14 @@ chruby $DEFAULT_RUBY
 
 source $ZSH/oh-my-zsh.sh
 
+# Set compiler aliases in OS X (assume installation through homebrew)
+if [ `uname`=='Darwin' ]; then
+  alias gcc='gcc-4.9'
+  alias cc='gcc-4.9'
+  alias g++='g++-4.9'
+  alias c++='c++-4.9'
+fi
+
 # Some extra aliases
 alias prails='pry -r ./config/environment'
 alias gff='nocorrect git flow feature'
@@ -56,14 +64,16 @@ alias gff='nocorrect git flow feature'
 case `uname` in
   Darwin)
     alias mvim='nocorrect mvim'
-    alias vi='/usr/local/Cellar/macvim/7.3-65/MacVim.app/Contents/MacOS/Vim'
-
-    # Set vi as the editor
     export EDITOR='mvim -v'
+    alias vi=$EDITOR
+
+    [ -s "/Users/grozen/.scm_breeze/scm_breeze.sh" ] && source "/Users/grozen/.scm_breeze/scm_breeze.sh"
     ;;
   Linux)
     # Set vi as the editor
     export EDITOR='gvim -v'
+
+    [ -s "/home/grozen/.scm_breeze/scm_breeze.sh" ] && source "/home/grozen/.scm_breeze/scm_breeze.sh"
     ;;
 esac
 
@@ -75,8 +85,6 @@ export CRACKLIB_DICTPATH=/usr/local/share/cracklib-words
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-[ -s "/home/grozen/.scm_breeze/scm_breeze.sh" ] && source "/home/grozen/.scm_breeze/scm_breeze.sh"
 
 # Environment variable for working with cloudstack Kred
 export KRED_HOST="cloud-testing-ci-114"

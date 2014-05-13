@@ -68,6 +68,10 @@ case `uname` in
     alias vi=$EDITOR
 
     [ -s "/Users/grozen/.scm_breeze/scm_breeze.sh" ] && source "/Users/grozen/.scm_breeze/scm_breeze.sh"
+
+    alias kred="cd /Users/grozen/Work/Klarna/vagrants/official/kred-in-a-box"
+    alias kred_up="kred && vagrant up && cd - >/dev/null"
+    alias kred_down="kred && vagrant suspend && cd - >/dev/null"
     ;;
   Linux)
     # Set vi as the editor
@@ -87,4 +91,6 @@ export CRACKLIB_DICTPATH=/usr/local/share/cracklib-words
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # Environment variable for working with cloudstack Kred
-export KRED_HOST="cloud-testing-ci-114"
+export KRED_HOST="kred-in-a-box.local"
+#export KRED_HOST="cloud-testing-ci-118"
+

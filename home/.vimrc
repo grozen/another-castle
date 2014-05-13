@@ -24,7 +24,7 @@ Bundle 'gmarik/vundle'
 Bundle "mileszs/ack.vim"
 nnoremap <leader>a :Ack!<space>
 
-Bundle 'tsaleh/vim-align'
+Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
@@ -80,6 +80,8 @@ au BufRead,BufNewFile *.scss set filetype=scss
 
 Bundle 'skammer/vim-css-color'
 
+Bundle 'aklt/plantuml-syntax'
+
 Bundle 'kchmck/vim-coffee-script'
 
 Bundle 'wavded/vim-stylus'
@@ -104,7 +106,7 @@ syntax on
 set background=dark
 colorscheme solarized
 
-set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline\:h14
+set guifont=Menlo\ for\ Powerline\:h16
 let macvim_hig_shift_movement = 1
 
 " Set 5 lines to the cursor - when moving vertically

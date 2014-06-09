@@ -24,7 +24,7 @@ DEFAULT_USER="grozen"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-DEFAULT_RUBY="ruby-1.9.3-p484"
+DEFAULT_RUBY="ruby-2.1.2"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)

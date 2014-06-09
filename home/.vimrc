@@ -36,7 +36,7 @@ set guioptions-=r
 set guioptions-=L
 
 Bundle 'michaeljsmith/vim-indent-object'
-let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
+let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown", "slim"]
 
 Bundle 'Spaceghost/vim-matchit'
 Bundle 'kien/ctrlp.vim'
@@ -72,6 +72,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'ecomba/vim-ruby-refactoring'
 
 Bundle 'tpope/vim-haml'
+Bundle 'slim-template/vim-slim.git'
 Bundle 'juvenn/mustache.vim'
 Bundle 'tpope/vim-markdown'
 

@@ -71,6 +71,8 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'ecomba/vim-ruby-refactoring'
 
+Bundle 'dag/vim2hs'
+
 Bundle 'tpope/vim-haml'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'juvenn/mustache.vim'

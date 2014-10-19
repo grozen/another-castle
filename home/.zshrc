@@ -34,7 +34,8 @@ plugins=(git bundler)
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH
 export PATH=/Users/grozen/bin/android-sdk-macosx/platform-tools:/Users/grozen/bin/android-sdk-macosx/platforms:/Users/grozen/bin/android-sdk-macosx/tools:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
-#
+export PATH=$HOME/Library/Haskell/bin:$PATH
+
 # Set up chruby
 export PATH=/usr/local/share/chruby:$PATH
 case `uname` in
@@ -94,3 +95,4 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export KRED_HOST="kred-in-a-box.local"
 #export KRED_HOST="cloud-testing-ci-118"
 
+export ANDROID_HOME="/Users/grozen/android-sdk-macosx"

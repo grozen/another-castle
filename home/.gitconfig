@@ -13,3 +13,5 @@
 	ui = always
 [core]
 	excludesfile = /Users/grozen/.gitignore
+[credential]
+	helper = osxkeychain

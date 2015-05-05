@@ -24,10 +24,11 @@ Bundle 'gmarik/vundle'
 Bundle "mileszs/ack.vim"
 nnoremap <leader>a :Ack!<space>
 
-Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
+
+Bundle 'junegunn/vim-easy-align'
 
 Bundle 'scrooloose/nerdtree'
 nmap <leader>n :NERDTreeToggle<CR>
@@ -41,6 +42,10 @@ let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "
 Bundle 'Spaceghost/vim-matchit'
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_extensions = ['tag']
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\vnode_modules$'
+  \ }
 
 Bundle 'bling/vim-airline'
 if !exists('g:airline_symbols')

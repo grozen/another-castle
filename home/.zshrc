@@ -60,6 +60,12 @@ if [ `uname`=='Darwin' ]; then
   alias c++='c++-4.9'
 fi
 
+# OS X specific exports
+if [ `uname`=='Darwin' ]; then
+  export ANDROID_HOME="/Users/grozen/android-sdk-macosx"
+  export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
 # Some extra aliases
 alias prails='pry -r ./config/environment'
 alias gff='nocorrect git flow feature'
@@ -89,6 +95,5 @@ export CRACKLIB_DICTPATH=/usr/local/share/cracklib-words
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export ANDROID_HOME="/Users/grozen/android-sdk-macosx"
-
-export JAVA_HOME="/usr/libexec/java_home"
+# added by travis gem
+[ -f /Users/grozen/.travis/travis.sh ] && source /Users/grozen/.travis/travis.sh

@@ -7,47 +7,65 @@ filetype off
 let mapleader = ","
 let maplocalleader = "\\"
 
-" Local vimrc configuration {{{
-let s:localrc = expand($HOME . '/.vim/local.vimrc')
-if filereadable(s:localrc)
-    exec ':so ' . s:localrc
-endif
-" }}}
-
 " VUNDLE {{{
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'aklt/plantuml-syntax'
+Plugin 'alfredodeza/jacinto.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'dag/vim2hs'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'ervandew/supertab'
+Plugin 'gmarik/vundle'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'juvenn/mustache.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'sjl/badwolf'
+Plugin 'skammer/vim-css-color'
+Plugin 'slim-template/vim-slim.git'
+Plugin 'spaceghost/vim-matchit'
+Plugin 'tomasr/molokai'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'wavded/vim-stylus'
+Plugin 'wgibbs/vim-irblack'
+Plugin 'zaiste/Atom'
+
+call vundle#end()
+filetype plugin indent on
 " }}}
 
-Bundle "mileszs/ack.vim"
 nnoremap <leader>a :Ack!<space>
-
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-
-Bundle 'junegunn/vim-easy-align'
-
-Bundle 'scrooloose/nerdtree'
 nmap <leader>n :NERDTreeToggle<CR>
+
 " Disable the scrollbars (NERDTree)
 set guioptions-=r
 set guioptions-=L
 
-Bundle 'michaeljsmith/vim-indent-object'
 let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown", "slim"]
 
-Bundle 'Spaceghost/vim-matchit'
-Bundle 'kien/ctrlp.vim'
 let g:ctrlp_extensions = ['tag']
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\vnode_modules$'
   \ }
 
-Bundle 'bling/vim-airline'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -61,55 +79,18 @@ let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
 
-Bundle 'majutsushi/tagbar'
 nmap <leader>t :TagbarToggle<CR>
 
-Bundle 'scrooloose/nerdcommenter'
 nmap <leader># :call NERDComment(0, "invert")<cr>
 vmap <leader># :call NERDComment(0, "invert")<cr>
 
-Bundle 'scrooloose/syntastic'
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'ecomba/vim-ruby-refactoring'
-
-Bundle 'dag/vim2hs'
-
-Bundle 'tpope/vim-haml'
-Bundle 'slim-template/vim-slim.git'
-Bundle 'juvenn/mustache.vim'
-Bundle 'tpope/vim-markdown'
-
-Bundle 'cakebaker/scss-syntax.vim'
 au BufRead,BufNewFile *.scss set filetype=scss
-
-Bundle 'skammer/vim-css-color'
-
-Bundle 'aklt/plantuml-syntax'
-
-Bundle 'kchmck/vim-coffee-script'
-
-Bundle 'wavded/vim-stylus'
-
-Bundle 'alfredodeza/jacinto.vim'
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
-Bundle 'ervandew/supertab'
-
-Bundle 'sjl/badwolf'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tomasr/molokai'
-Bundle 'zaiste/Atom'
-Bundle 'w0ng/vim-hybrid'
-Bundle 'wgibbs/vim-irblack'
-Bundle 'altercation/vim-colors-solarized'
-
-
 " General
-filetype plugin indent on
 syntax on
 set background=dark
 colorscheme solarized
@@ -181,20 +162,23 @@ set notimeout
 set ttimeout
 set ttimeoutlen=10
 
-" _ backups {{{
+" backups {{{
 set undodir=~/.vim/tmp/undo//     " undo files
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup
+" }}}
 
 set modelines=0
 set noeol
 set relativenumber
 set numberwidth=4
 set ruler
+
 if executable('/bin/zsh')
   set shell=/bin/zsh
 endif
+
 set showcmd
 
 set exrc

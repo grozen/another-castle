@@ -1,45 +1,40 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# Load Zgen
+source "${HOME}/.homesick/repos/another-castle/dependencies/zgen/zgen.zsh"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Create Zgen init script if it doesn't exist
+if ! zgen saved; then
+  echo 'Creating Zgen init script...'
+  zgen oh-my-zsh
+  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/bundler
+
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-completions src
+
+  zgen oh-my-zsh themes/agnoster
+
+  zgen save
+fi
+
 ZSH_THEME="agnoster"
 
 DEFAULT_USER="grozen"
-
 LANG=en_US.UTF-8
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
 
 DEFAULT_RUBY="ruby-2.1.2"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler)
-
-# Customize to your needs...
+# Customize the PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH
+
+# Add Android SDK to path
 export PATH=/Users/grozen/bin/android-sdk-macosx/platform-tools:/Users/grozen/bin/android-sdk-macosx/platforms:/Users/grozen/bin/android-sdk-macosx/tools:$PATH
-export PATH=/usr/local/share/npm/bin:$PATH
+
+# Add Haskell to path
 export PATH=$HOME/Library/Haskell/bin:$PATH
 
 # Set up chruby
 export PATH=/usr/local/share/chruby:$PATH
+
 case `uname` in
   Darwin)
     source /usr/local/opt/chruby/share/chruby/chruby.sh
@@ -49,8 +44,6 @@ case `uname` in
     ;;
 esac
 chruby $DEFAULT_RUBY
-
-source $ZSH/oh-my-zsh.sh
 
 # Set compiler aliases in OS X (assume installation through homebrew)
 if [ `uname`=='Darwin' ]; then
@@ -68,8 +61,8 @@ fi
 
 # Some extra aliases
 alias prails='pry -r ./config/environment'
-alias gff='nocorrect git flow feature'
 
+# OS specific default editor and SCM breeze
 case `uname` in
   Darwin)
     alias mvim='nocorrect mvim'
@@ -88,9 +81,6 @@ esac
 
 # Postgres data folder
 export PGDATA=/usr/local/var/postgres
-
-# This lets Kred find the cracklib dictionary
-export CRACKLIB_DICTPATH=/usr/local/share/cracklib-words
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

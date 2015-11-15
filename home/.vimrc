@@ -96,7 +96,7 @@ syntax on
 set background=dark
 colorscheme solarized
 
-set guifont=Menlo\ for\ Powerline\:h16
+set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\:h16
 let macvim_hig_shift_movement = 1
 
 " Set 5 lines to the cursor - when moving vertically

@@ -115,6 +115,8 @@ if has("unix")
   else
     set clipboard=unnamedplus
   endif
+else
+  set clipboard=unnamed
 endif
 
 " Remove annoying balloons on hover

@@ -24,7 +24,7 @@ ZSH_THEME="agnoster"
 DEFAULT_USER="grozen"
 LANG=en_US.UTF-8
 
-DEFAULT_RUBY="ruby-2.1.2"
+DEFAULT_RUBY="ruby-2.3.0"
 
 # Customize the PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH

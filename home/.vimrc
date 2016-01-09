@@ -52,6 +52,16 @@ call vundle#end()
 filetype plugin indent on
 " }}}
 
+" General
+syntax on
+
+set t_Co=16
+set background=dark
+colorscheme solarized
+
+set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\:h16
+let macvim_hig_shift_movement = 1
+
 nnoremap <leader>a :Ack!<space>
 nmap <leader>n :NERDTreeToggle<CR>
 
@@ -90,14 +100,6 @@ let g:syntastic_auto_loc_list=1
 
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-
-" General
-syntax on
-set background=dark
-colorscheme solarized
-
-set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\:h16
-let macvim_hig_shift_movement = 1
 
 " Set 5 lines to the cursor - when moving vertically
 set scrolloff=5

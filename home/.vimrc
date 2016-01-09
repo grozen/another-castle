@@ -111,7 +111,9 @@ else
 endif
 
 " Remove annoying balloons on hover
-set noballooneval
+if has("gui_running")
+  set noballooneval
+endif
 
 " clear highlight after search
 noremap <silent><Leader>/ :nohls<CR>

@@ -38,12 +38,15 @@ export PATH=$HOME/Library/Haskell/bin:$PATH
 # Set up chruby
 export PATH=/usr/local/share/chruby:$PATH
 
+# Set up chruby
 case `uname` in
   Darwin)
     source /usr/local/opt/chruby/share/chruby/chruby.sh
+    source /usr/local/opt/chruby/share/chruby/auto.sh
     ;;
   Linux)
     source /usr/local/share/chruby/chruby.sh
+    source /usr/local/share/chruby/auto.sh
     ;;
 esac
 chruby $DEFAULT_RUBY

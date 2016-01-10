@@ -35,8 +35,16 @@ export PATH=/Users/grozen/bin/android-sdk-macosx/platform-tools:/Users/grozen/bi
 # Add Haskell to path
 export PATH=$HOME/Library/Haskell/bin:$PATH
 
-# Set up chruby
-export PATH=/usr/local/share/chruby:$PATH
+# Set up NVM
+export NVM_DIR=~/.nvm
+case `uname` in
+  Darwin)
+    source $(brew --prefix nvm)/nvm.sh # Assuming NVM was installed using brew
+    ;;
+  Linux)
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    ;;
+esac
 
 # Set up chruby
 case `uname` in

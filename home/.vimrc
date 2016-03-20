@@ -203,6 +203,9 @@ set wildmenu
 " When vimrc is edited, reload it
 autocmd! BufWritePost vimrc source ~/.vimrc
 
+" Prevent an issue with tab expansion when files are auto-reloaded
+au BufReadPost * set expandtab
+
 " }}}
 
 " Cursorline {{{

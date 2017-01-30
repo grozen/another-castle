@@ -19,12 +19,16 @@ if ! zgen saved; then
   zgen save
 fi
 
-ZSH_THEME="agnoster"
+export ZSH_THEME="agnoster"
 
-DEFAULT_USER="grozen"
-LANG=en_US.UTF-8
+export DEFAULT_USER="grozen"
 
-DEFAULT_RUBY="ruby-2.3.0"
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+DEFAULT_RUBY="2.3"
 
 # Customize the PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH
@@ -58,14 +62,6 @@ case `uname` in
     ;;
 esac
 chruby $DEFAULT_RUBY
-
-# Set compiler aliases in OS X (assume installation through homebrew)
-if [ `uname`=='Darwin' ]; then
-  alias gcc='gcc-4.9'
-  alias cc='gcc-4.9'
-  alias g++='g++-4.9'
-  alias c++='c++-4.9'
-fi
 
 # OS X specific exports
 if [ `uname`=='Darwin' ]; then

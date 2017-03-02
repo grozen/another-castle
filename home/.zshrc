@@ -1,5 +1,6 @@
 # Disable Oh My Zsh update prompt as part of Zgen
 export DISABLE_AUTO_UPDATE="true"
+export LDAP_USERNAME="guy.rozen"
 
 # Load Zgen
 source "${HOME}/.homesick/repos/another-castle/dependencies/zgen/zgen.zsh"

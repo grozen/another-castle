@@ -67,10 +67,7 @@ set guioptions-=L
 let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown", "slim"]
 
 let g:ctrlp_extensions = ['tag']
-
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\vnode_modules$'
-  \ }
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 let g:airline_powerline_fonts = 1
 

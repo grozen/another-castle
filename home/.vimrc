@@ -27,7 +27,8 @@ Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'othree/yajs.vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -37,10 +38,10 @@ Plugin 'spaceghost/vim-matchit'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'w0rp/ale'
 Plugin 'wavded/vim-stylus'
 
 call vundle#end()
@@ -76,8 +77,13 @@ nmap <leader>t :TagbarToggle<CR>
 nmap <leader># :call NERDComment(0, "invert")<cr>
 vmap <leader># :call NERDComment(0, "invert")<cr>
 
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
+let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_javascript_eslint_use_global = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_open_list = 1
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_lint_delay = 0
 
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable

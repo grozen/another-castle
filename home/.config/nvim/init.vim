@@ -60,6 +60,9 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'mhartington/nvim-typescript'
 
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
 Plug 'ruanyl/vim-fixmyjs'
 Plug 'eugen0329/vim-esearch'
 Plug 'terryma/vim-multiple-cursors'
@@ -149,11 +152,6 @@ set binary
 "" Fix backspace indent
 set backspace=indent,eol,start
 
-"" Tabs. May be overriten by autocmd rules
-set tabstop=4
-set softtabstop=0
-set shiftwidth=4
-set expandtab
 
 "" Map leader to ,
 let mapleader=','
@@ -214,7 +212,7 @@ else
 
 endif
 
-
+set relativenumber
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
@@ -324,6 +322,9 @@ augroup vimrc-make-cmake
   autocmd FileType make setlocal noexpandtab
   autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 augroup END
+
+" set filetypes as typescript.jsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.jsx
 
 set autoread
 
@@ -538,13 +539,6 @@ augroup END
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
-
-" vim-javascript
-augroup vimrc-javascript
-  autocmd!
-  autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
-augroup END
-
 
 " python
 " vim-python
@@ -769,7 +763,7 @@ set nojoinspaces                " Prevents inserting two spaces after punctuatio
 set splitright                  " Puts new vsplit windows to the right of the current
 set splitbelow                  " Puts new split windows to the bottom of the current
 
-
+let delimitMate_expand_cr = 1   " Sane handling of enter keys inside curly braces
 
 if !exists('g:not_finish_vimplug')
  colorscheme solarized
@@ -790,10 +784,6 @@ let g:gitgutter_sign_removed = '〉'
 "*****************************************************************************
 inoremap <C-L> =>
 
-
-
-
-nnoremap <C-o> :NERDTreeFocus<CR>
 " auto format with neoformat on save
 let g:neoformat_enabled_javascript = ['eslint_d']
 augroup fmt

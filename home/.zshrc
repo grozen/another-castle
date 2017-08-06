@@ -76,8 +76,7 @@ alias prails='pry -r ./config/environment'
 # OS specific default editor and SCM breeze
 case `uname` in
   Darwin)
-    alias mvim='nocorrect mvim'
-    export EDITOR='mvim -v'
+    export EDITOR='nvim'
     alias vi=$EDITOR
 
     [ -s "/Users/grozen/.scm_breeze/scm_breeze.sh" ] && source "/Users/grozen/.scm_breeze/scm_breeze.sh"
@@ -89,6 +88,9 @@ case `uname` in
     [ -s "/home/grozen/.scm_breeze/scm_breeze.sh" ] && source "/home/grozen/.scm_breeze/scm_breeze.sh"
     ;;
 esac
+
+# Add Java home bin folder to path
+export PATH=$JAVA_HOME/bin:$PATH
 
 # Postgres data folder
 export PGDATA=/usr/local/var/postgres

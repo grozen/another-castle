@@ -73,6 +73,9 @@ fi
 # Some extra aliases
 alias prails='pry -r ./config/environment'
 
+# added by avn
+[ -s "$HOME/.avn/bin/avn.sh" ] && source "$HOME/.avn/bin/avn.sh"
+
 # OS specific default editor and SCM breeze
 case `uname` in
   Darwin)
@@ -100,4 +103,3 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # added by travis gem
 [ -f /Users/grozen/.travis/travis.sh ] && source /Users/grozen/.travis/travis.sh
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn

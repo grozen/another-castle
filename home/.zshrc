@@ -31,6 +31,9 @@ export LANGUAGE=en_US.UTF-8
 
 DEFAULT_RUBY="2.3"
 
+# Add my key to the ssh agent
+ssh-add -K ~/.ssh/id_rsa 2>/dev/null
+
 # Customize the PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH
 
@@ -75,6 +78,9 @@ alias prails='pry -r ./config/environment'
 
 # added by avn
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
+
+# Start using the-fuck
+eval $(thefuck --alias)
 
 # OS specific default editor and SCM breeze
 case `uname` in

@@ -4,3 +4,5 @@
 
 # added by travis gem
 [ -f /Users/grozen/.travis/travis.sh ] && source /Users/grozen/.travis/travis.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

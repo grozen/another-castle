@@ -20,6 +20,8 @@ let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 let g:vim_bootstrap_langs = "go,javascript,python,ruby"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
 
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 if !filereadable(vimplug_exists)
   echo "Installing Vim-Plug..."

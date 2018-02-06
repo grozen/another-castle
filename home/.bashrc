@@ -1,8 +1,8 @@
-[ -s "/home/grozen/.scm_breeze/scm_breeze.sh" ] && source "/home/grozen/.scm_breeze/scm_breeze.sh"
+DEFAULT_USER="rozen"
 
-[ -s "/Users/grozen/.scm_breeze/scm_breeze.sh" ] && source "/Users/grozen/.scm_breeze/scm_breeze.sh"
+[ -s "/Users/$DEFAULT_USER/.scm_breeze/scm_breeze.sh" ] && source "/Users/$DEFAULT_USER/.scm_breeze/scm_breeze.sh"
 
 # added by travis gem
-[ -f /Users/grozen/.travis/travis.sh ] && source /Users/grozen/.travis/travis.sh
+[ -f /Users/$DEFAULT_USER/.travis/travis.sh ] && source /Users/$DEFAULT_USER/.travis/travis.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

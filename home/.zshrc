@@ -22,14 +22,14 @@ fi
 
 export ZSH_THEME="agnoster"
 
-export DEFAULT_USER="grozen"
+export DEFAULT_USER="rozen"
 
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-DEFAULT_RUBY="2.3"
+DEFAULT_RUBY="2.5"
 
 # Add my key to the ssh agent
 ssh-add -K ~/.ssh/id_rsa 2>/dev/null
@@ -38,7 +38,7 @@ ssh-add -K ~/.ssh/id_rsa 2>/dev/null
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH
 
 # Add Android SDK to path
-export PATH=/Users/grozen/bin/android-sdk-macosx/platform-tools:/Users/grozen/bin/android-sdk-macosx/platforms:/Users/grozen/bin/android-sdk-macosx/tools:$PATH
+export PATH=/Users/$DEFAULT_USER/bin/android-sdk-macosx/platform-tools:/Users/$DEFAULT_USER/bin/android-sdk-macosx/platforms:/Users/$DEFAULT_USER/bin/android-sdk-macosx/tools:$PATH
 
 # Add Haskell to path
 export PATH=$HOME/Library/Haskell/bin:$PATH
@@ -69,7 +69,7 @@ chruby $DEFAULT_RUBY
 
 # OS X specific exports
 if [ `uname`=='Darwin' ]; then
-  export ANDROID_HOME="/Users/grozen/android-sdk-macosx"
+  export ANDROID_HOME="/Users/$DEFAULT_USER/android-sdk-macosx"
   export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
@@ -88,13 +88,13 @@ case `uname` in
     export EDITOR='nvim'
     alias vi=$EDITOR
 
-    [ -s "/Users/grozen/.scm_breeze/scm_breeze.sh" ] && source "/Users/grozen/.scm_breeze/scm_breeze.sh"
+    [ -s "/Users/$DEFAULT_USER/.scm_breeze/scm_breeze.sh" ] && source "/Users/$DEFAULT_USER/.scm_breeze/scm_breeze.sh"
     ;;
   Linux)
     # Set vi as the editor
     export EDITOR='gvim -v'
 
-    [ -s "/home/grozen/.scm_breeze/scm_breeze.sh" ] && source "/home/grozen/.scm_breeze/scm_breeze.sh"
+    [ -s "/home/$DEFAULT_USER/.scm_breeze/scm_breeze.sh" ] && source "/home/$DEFAULT_USER/.scm_breeze/scm_breeze.sh"
     ;;
 esac
 
@@ -108,6 +108,6 @@ export PGDATA=/usr/local/var/postgres
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # added by travis gem
-[ -f /Users/grozen/.travis/travis.sh ] && source /Users/grozen/.travis/travis.sh
+[ -f /Users/$DEFAULT_USER/.travis/travis.sh ] && source /Users/$DEFAULT_USER/.travis/travis.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

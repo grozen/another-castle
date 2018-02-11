@@ -1,6 +1,6 @@
 [user]
 	name = Guy Rozen
-	email = holyeggplant@gmail.com
+	email = guy.rozen@here.com
 [alias]
 	co = checkout
 	ci = checkin
@@ -15,3 +15,6 @@
 	excludesfile = /Users/grozen/.gitignore
 [credential]
 	helper = osxkeychain
+[gitreview]
+	remote = origin
+	username = rozen

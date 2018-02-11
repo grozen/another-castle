@@ -71,6 +71,7 @@ chruby $DEFAULT_RUBY
 if [ `uname`=='Darwin' ]; then
   export ANDROID_HOME="/Users/$DEFAULT_USER/android-sdk-macosx"
   export JAVA_HOME=$(/usr/libexec/java_home)
+  export GOPATH="/Users/$DEFAULT_USER/go"
 fi
 
 # Some extra aliases
@@ -110,4 +111,4 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # added by travis gem
 [ -f /Users/$DEFAULT_USER/.travis/travis.sh ] && source /Users/$DEFAULT_USER/.travis/travis.sh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /Users/$DEFAULT_USER/.fzf.zsh ] && source /Users/$DEFAULT_USER/.fzf.zsh

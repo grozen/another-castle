@@ -23,3 +23,6 @@ set number relativenumber
 
 " Enable vim-surround support
 set surround
+
+" Use system clipboard
+set clipboard=unnamed

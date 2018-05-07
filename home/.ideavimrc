@@ -20,3 +20,6 @@ nnoremap N Nzzzv
 
 " Hybrid line numbers
 set number relativenumber
+
+" Enable vim-surround support
+set surround

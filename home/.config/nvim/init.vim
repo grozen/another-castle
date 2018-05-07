@@ -58,13 +58,6 @@ Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'gaving/vim-textobj-argument' " argument text object: cia
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'mhartington/nvim-typescript'
-
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-
 Plug 'ruanyl/vim-fixmyjs'
 Plug 'eugen0329/vim-esearch'
 Plug 'terryma/vim-multiple-cursors'
@@ -711,32 +704,6 @@ augroup my_error_signs
        \ hi ALEErrorSign ctermbg=black ctermfg=red |
        \ hi ALEWarningSign ctermbg=black ctermfg=yellow
 augroup END
-
-
-" deoplete - code completion
-let g:deoplete#enable_at_startup = 1
-let g:echodoc_enable_at_startup=1
-  set splitbelow
-  set completeopt+=noselect
-  autocmd CompleteDone * pclose
-  function! Multiple_cursors_before()
-    let b:deoplete_disable_auto_complete=2
-  endfunction
-  function! Multiple_cursors_after()
-    let b:deoplete_disable_auto_complete=0
-  endfunction
-
-  call deoplete#custom#set('buffer', 'mark', 'buffer')
-  call deoplete#custom#set('omni', 'mark', 'omni')
-  call deoplete#custom#set('file', 'mark', 'file')
-
-  function! Preview_func()
-    if &pvw
-      setlocal nonumber norelativenumber
-     endif
-  endfunction
-  autocmd WinEnter * call Preview_func()
-  call deoplete#custom#set('_', 'matchers', ['matcher_fuzzy'])
 
 " Undo, backups
 " $ mkdir -p ~/.vim-tmp/{swp,backup,undo}

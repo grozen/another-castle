@@ -1,0 +1,22 @@
+set nocompatible
+filetype off
+
+let mapleader = ","
+let maplocalleader = "\\"
+
+map Y y$
+
+inoremap jj <ESC>
+
+set ignorecase
+set smartcase
+set showmatch
+set gdefault
+set hlsearch
+
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Hybrid line numbers
+set number relativenumber

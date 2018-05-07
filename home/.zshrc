@@ -72,6 +72,7 @@ if [ `uname`=='Darwin' ]; then
   export ANDROID_HOME="/Users/$DEFAULT_USER/android-sdk-macosx"
   export JAVA_HOME=$(/usr/libexec/java_home)
   export GOPATH="/Users/$DEFAULT_USER/go"
+  export PATH=$PATH:$GOPATH/bin # Add gopath to path
 fi
 
 # Some extra aliases

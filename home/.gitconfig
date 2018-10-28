@@ -18,3 +18,5 @@
 [gitreview]
 	remote = origin
 	username = rozen
+[tag]
+	sort = version:refname

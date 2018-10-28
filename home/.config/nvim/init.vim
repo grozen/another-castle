@@ -17,9 +17,6 @@ endif
 
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 
-let g:vim_bootstrap_langs = "go,javascript,python,ruby"
-let g:vim_bootstrap_editor = "nvim"				" nvim or vim
-
 let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
@@ -39,6 +36,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "" Plug install packages
 "*****************************************************************************
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -47,14 +45,11 @@ Plug 'tpope/vim-repeat'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
-Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine'
-Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'gaving/vim-textobj-argument' " argument text object: cia
 
@@ -64,11 +59,7 @@ Plug 'terryma/vim-multiple-cursors'
 
 Plug 'sbdchd/neoformat'
 
-
-
 Plug 'w0rp/ale'
-
-
 
 let g:make = 'gmake'
 if exists('make')
@@ -260,24 +251,9 @@ noremap <leader>n :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-
-
-" grep.vim
-nnoremap <silent> <leader>f :Rgrep<CR>
-let Grep_Default_Options = '-IR'
-let Grep_Skip_Files = '*.log *.db'
-let Grep_Skip_Dirs = '.git node_modules'
-
 " vimshell.vim
 let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_prompt =  '$ '
-
-" terminal emulation
-if g:vim_bootstrap_editor == 'nvim'
-  nnoremap <silent> <leader>sh :terminal<CR>
-else
-  nnoremap <silent> <leader>sh :VimShellCreate<CR>
-endif
 
 "*****************************************************************************
 "" Functions

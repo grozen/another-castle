@@ -61,6 +61,8 @@ Plug 'sbdchd/neoformat'
 
 Plug 'w0rp/ale'
 
+Plug 'rking/ag.vim'
+
 let g:make = 'gmake'
 if exists('make')
         let g:make = 'make'

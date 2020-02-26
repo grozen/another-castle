@@ -22,14 +22,14 @@ fi
 
 export ZSH_THEME="agnoster"
 
-export DEFAULT_USER="rozen"
+export DEFAULT_USER=$(whoami)
 
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-DEFAULT_RUBY="2.5"
+DEFAULT_RUBY="2.7"
 
 # Add my key to the ssh agent
 ssh-add -K ~/.ssh/id_rsa 2>/dev/null

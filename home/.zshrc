@@ -43,6 +43,9 @@ export PATH=/Users/$DEFAULT_USER/bin/android-sdk-macosx/platform-tools:/Users/$D
 # Add Haskell to path
 export PATH=$HOME/Library/Haskell/bin:$PATH
 
+# Add Python tools to path
+export PATH=$HOME/.local/bin:$PATH
+
 # Set up NVM
 export NVM_DIR=~/.nvm
 case `uname` in

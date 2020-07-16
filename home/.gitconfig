@@ -1,12 +1,9 @@
 [user]
 	name = Guy Rozen
-	email = guy.rozen@here.com
+	email = guy.rozen@forter.com
 [alias]
 	co = checkout
 	ci = checkin
-[github]
-	user = Guy Rozen
-	token = 411a75b09c1ab95401e42d0099e613e3
 [push]
 	default = tracking
 [color]
@@ -15,8 +12,5 @@
 	excludesfile = /Users/grozen/.gitignore
 [credential]
 	helper = osxkeychain
-[gitreview]
-	remote = origin
-	username = rozen
 [tag]
 	sort = version:refname

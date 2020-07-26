@@ -78,12 +78,6 @@ if [ `uname`=='Darwin' ]; then
   export PATH=$PATH:$GOPATH/bin # Add gopath to path
 fi
 
-# Some extra aliases
-alias prails='pry -r ./config/environment'
-
-# added by avn
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
-
 # Start using the-fuck
 eval $(thefuck --alias)
 
@@ -109,10 +103,11 @@ export PATH=$JAVA_HOME/bin:$PATH
 # Postgres data folder
 export PGDATA=/usr/local/var/postgres
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # added by travis gem
 [ -f /Users/$DEFAULT_USER/.travis/travis.sh ] && source /Users/$DEFAULT_USER/.travis/travis.sh
 
 [ -f /Users/$DEFAULT_USER/.fzf.zsh ] && source /Users/$DEFAULT_USER/.fzf.zsh
+
+# pyenv initialization
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

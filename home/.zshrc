@@ -35,16 +35,13 @@ DEFAULT_RUBY="2.7"
 ssh-add -K ~/.ssh/id_rsa 2>/dev/null
 
 # Customize the PATH
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH
 
 # Add Android SDK to path
 export PATH=/Users/$DEFAULT_USER/bin/android-sdk-macosx/platform-tools:/Users/$DEFAULT_USER/bin/android-sdk-macosx/platforms:/Users/$DEFAULT_USER/bin/android-sdk-macosx/tools:$PATH
 
 # Add Haskell to path
 export PATH=$HOME/Library/Haskell/bin:$PATH
-
-# Add Python tools to path
-export PATH=$HOME/.local/bin:$PATH
 
 # Set up NVM
 export NVM_DIR=~/.nvm
@@ -103,11 +100,13 @@ export PATH=$JAVA_HOME/bin:$PATH
 # Postgres data folder
 export PGDATA=/usr/local/var/postgres
 
-# added by travis gem
-[ -f /Users/$DEFAULT_USER/.travis/travis.sh ] && source /Users/$DEFAULT_USER/.travis/travis.sh
-
 [ -f /Users/$DEFAULT_USER/.fzf.zsh ] && source /Users/$DEFAULT_USER/.fzf.zsh
 
 # pyenv initialization
+export PATH="/Users/guy_rozen/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Forter specific
+alias fff="forter feature from -a"
+alias ffp="forter feature pr"

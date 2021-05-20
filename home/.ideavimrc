@@ -26,3 +26,4 @@ set surround
 
 " Use system clipboard
 set clipboard=unnamed
+set clipboard+=ideaput

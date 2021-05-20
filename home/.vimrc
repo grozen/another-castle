@@ -24,7 +24,6 @@ Plugin 'ElmCast/elm-vim'
 Plugin 'ervandew/supertab'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'HerringtonDarkholme/yats.vim'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'leafgarland/typescript-vim'
@@ -41,9 +40,7 @@ Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'w0rp/ale'
-Plugin 'wavded/vim-stylus'
 
 call vundle#end()
 filetype plugin indent on

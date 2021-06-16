@@ -20,6 +20,11 @@ let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
+" Syntax highlight
+" Default highlight is better than polyglot
+let g:polyglot_disabled = ['python']
+let python_highlight_all = 1
+
 if !filereadable(vimplug_exists)
   echo "Installing Vim-Plug..."
   echo ""
@@ -523,12 +528,6 @@ augroup END
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
-
-" Syntax highlight
-" Default highlight is better than polyglot
-let g:polyglot_disabled = ['python']
-let python_highlight_all = 1
-
 
 " ruby
 let g:rubycomplete_buffer_loading = 1

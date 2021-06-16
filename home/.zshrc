@@ -75,9 +75,6 @@ if [ `uname`=='Darwin' ]; then
   export PATH=$PATH:$GOPATH/bin # Add gopath to path
 fi
 
-# Start using the-fuck
-eval $(thefuck --alias)
-
 # OS specific default editor and SCM breeze
 case `uname` in
   Darwin)
@@ -102,11 +99,17 @@ export PGDATA=/usr/local/var/postgres
 
 [ -f /Users/$DEFAULT_USER/.fzf.zsh ] && source /Users/$DEFAULT_USER/.fzf.zsh
 
-# pyenv initialization
-export PATH="/Users/guy_rozen/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 # Forter specific
 alias fff="forter feature from -a"
 alias ffp="forter feature pr"
+alias ffc="forter feature create -n"
+
+# Enable pyenv
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+# Created by `pipx` on 2021-06-16 20:09:49
+export PATH="$PATH:/Users/guy_rozen/.local/bin"
+
+# Start using the-fuck
+eval $(thefuck --alias)

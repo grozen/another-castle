@@ -104,6 +104,17 @@ alias fff="forter feature from -a"
 alias ffp="forter feature pr"
 alias ffc="forter feature create -n"
 
+export FORTER_ROOT_CA=/Users/$USER/dev/kitchen/cookbooks/forter/files/default/ca.pem
+export ES_VELOCITY_CLUSTER_NAME=dev-es-5-velocity
+export ENV=develop
+export ES_SESSIONS_CLUSTER_NAME=dev-es-5-sessions
+export ES_SESSIONS_INDEX_NAME=sessionsFromProd
+export ES_ACCOUNTS=dev-es-5-accounts
+export DB_S3_PATH=dev_v3/develop-db
+export ES_ENTITYS_INDEX_NAME=entities-restore
+export VERBOSE_LOG=true
+export SERVE_MODE=true
+
 # Enable pyenv
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"

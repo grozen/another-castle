@@ -1,4 +1,4 @@
-DEFAULT_USER="rozen"
+DEFAULT_USER="guy_rozen"
 
 [ -s "/Users/$DEFAULT_USER/.scm_breeze/scm_breeze.sh" ] && source "/Users/$DEFAULT_USER/.scm_breeze/scm_breeze.sh"
 

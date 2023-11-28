@@ -104,23 +104,15 @@ alias fff="forter feature from -a"
 alias ffp="forter feature pr"
 alias ffc="forter feature create -n"
 
-export FORTER_ROOT_CA=/Users/$USER/dev/kitchen/cookbooks/forter/files/default/ca.pem
-export ES_VELOCITY_CLUSTER_NAME=dev-es-5-velocity
-export ENV=develop
-export ES_SESSIONS_CLUSTER_NAME=dev-es-5-sessions
-export ES_SESSIONS_INDEX_NAME=sessionsFromProd
-export ES_ACCOUNTS=dev-es-5-accounts
-export DB_S3_PATH=dev_v3/develop-db
-export ES_ENTITYS_INDEX_NAME=entities-restore
-export VERBOSE_LOG=true
-export SERVE_MODE=true
+export AWS_PROFILE="main-wrapped"
+export AWS_SDK_LOAD_CONFIG=1
+alias awslogin='aws --profile sso sso login'
+alias awslogout='aws --profile sso sso logout'
 
-# Enable pyenv
-eval "$(pyenv init --path)"
+# Init pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# Created by `pipx` on 2021-06-16 20:09:49
+# Created by `pipx` on 2022-10-25 15:49:50
 export PATH="$PATH:/Users/guy_rozen/.local/bin"
-
-# Start using the-fuck
-eval $(thefuck --alias)

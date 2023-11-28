@@ -20,27 +20,22 @@ Plugin 'bling/vim-airline'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'dag/vim2hs'
 Plugin 'digitaltoad/vim-pug'
-Plugin 'ElmCast/elm-vim'
 Plugin 'ervandew/supertab'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'rking/ag.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
-Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'skammer/vim-css-color'
-Plugin 'slim-template/vim-slim.git'
 Plugin 'spaceghost/vim-matchit'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'w0rp/ale'
 
 call vundle#end()
 filetype plugin indent on
@@ -74,14 +69,6 @@ nmap <leader>t :TagbarToggle<CR>
 
 nmap <leader># :call NERDComment(0, "invert")<cr>
 vmap <leader># :call NERDComment(0, "invert")<cr>
-
-let g:ale_javascript_eslint_executable = 'eslint_d'
-let g:ale_javascript_eslint_use_global = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_open_list = 1
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-let g:ale_lint_delay = 0
 
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable

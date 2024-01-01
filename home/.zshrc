@@ -1,26 +1,26 @@
-# Disable Oh My Zsh update prompt as part of Zgen
-export DISABLE_AUTO_UPDATE="true"
-export LDAP_USERNAME="guy.rozen"
+###### Install plugins via zplug
 
-# Load Zgen
-source "${HOME}/.homesick/repos/another-castle/dependencies/zgen/zgen.zsh"
+source ~/.zplug/init.zsh
 
-# Create Zgen init script if it doesn't exist
-if ! zgen saved; then
-  echo 'Creating Zgen init script...'
-  zgen oh-my-zsh
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/bundler
+zplug "plugins/git",   from:oh-my-zsh
+zplug "plugins/bundler",   from:oh-my-zsh
 
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load zsh-users/zsh-completions src
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
-  zgen oh-my-zsh themes/agnoster
-
-  zgen save
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
 
-export ZSH_THEME="agnoster"
+# Then, source plugins and add commands to $PATH
+zplug load
+
+######
 
 export DEFAULT_USER=$(whoami)
 
@@ -29,19 +29,11 @@ export LC_CTYPE=UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-DEFAULT_RUBY="2.7"
-
 # Add my key to the ssh agent
 ssh-add -K ~/.ssh/id_rsa 2>/dev/null
 
 # Customize the PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH
-
-# Add Android SDK to path
-export PATH=/Users/$DEFAULT_USER/bin/android-sdk-macosx/platform-tools:/Users/$DEFAULT_USER/bin/android-sdk-macosx/platforms:/Users/$DEFAULT_USER/bin/android-sdk-macosx/tools:$PATH
-
-# Add Haskell to path
-export PATH=$HOME/Library/Haskell/bin:$PATH
 
 # Set up NVM
 export NVM_DIR=~/.nvm
@@ -65,7 +57,6 @@ case `uname` in
     source /usr/local/share/chruby/auto.sh
     ;;
 esac
-chruby $DEFAULT_RUBY
 
 # OS X specific exports
 if [ `uname`=='Darwin' ]; then
@@ -116,3 +107,6 @@ eval "$(pyenv init -)"
 
 # Created by `pipx` on 2022-10-25 15:49:50
 export PATH="$PATH:/Users/guy_rozen/.local/bin"
+
+# Use starship
+eval "$(starship init zsh)"

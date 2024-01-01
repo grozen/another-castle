@@ -1,2 +1,4 @@
 .config/terminator
 .config/nvim
+.config
+.vim/autoload

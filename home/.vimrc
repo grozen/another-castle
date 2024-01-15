@@ -14,8 +14,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'kien/ctrlp.vim'
 
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
 Plug 'skammer/vim-css-color'
 
 Plug 'tpope/vim-abolish'
@@ -101,6 +101,9 @@ vnoremap <F1> :set invfullscreen<CR>
 " Easy comment/uncomment
 nmap <leader># :call NERDComment(0, "invert")<cr>
 vmap <leader># :call NERDComment(0, "invert")<cr>
+
+" NERDTree shortcuts
+nnoremap <leader>n :NERDTreeFocus<CR>
 
 " Yank from current cursor position to end of line
 map Y y$

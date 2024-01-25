@@ -6,7 +6,8 @@ zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/bundler",   from:oh-my-zsh
 
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-history-substring-search", as:plugin, defer:3
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Install plugins if there are plugins that have not been installed
@@ -28,6 +29,13 @@ export LC_ALL=en_US.UTF-8
 export LC_CTYPE=UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
+
+# Configure autosuggestion highlight style
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4c4c4c"
+
+# Bind keys for history substring search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # Add my key to the ssh agent
 ssh-add -K ~/.ssh/id_rsa 2>/dev/null

@@ -40,6 +40,9 @@ bindkey '^[[B' history-substring-search-down
 # Add my key to the ssh agent
 ssh-add -K ~/.ssh/id_rsa 2>/dev/null
 
+# Share history between tabs
+setopt inc_append_history share_history
+
 # Customize the PATH
 export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH
 

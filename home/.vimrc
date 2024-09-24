@@ -8,7 +8,7 @@ filetype off
 call plug#begin()
 
 Plug 'alfredodeza/jacinto.vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'ericbn/vim-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -139,6 +139,6 @@ set listchars=tab:▸\ ,eol:¬
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
 " Color scheme (terminal)
-set t_Co=16
+set termguicolors
 set background=dark
 colorscheme solarized

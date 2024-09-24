@@ -1,6 +1,6 @@
 ###### Install plugins via zplug
-
-source ~/.zplug/init.zsh
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/bundler",   from:oh-my-zsh
@@ -44,7 +44,7 @@ ssh-add -K ~/.ssh/id_rsa 2>/dev/null
 setopt inc_append_history share_history
 
 # Customize the PATH
-export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH
+export PATH=/opt/homebrew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH
 
 # Set up NVM
 export NVM_DIR=~/.nvm
@@ -60,8 +60,8 @@ esac
 # Set up chruby
 case `uname` in
   Darwin)
-    source /usr/local/opt/chruby/share/chruby/chruby.sh
-    source /usr/local/opt/chruby/share/chruby/auto.sh
+    source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+    source /opt/homebrew/opt/chruby/share/chruby/auto.sh
     ;;
   Linux)
     source /usr/local/share/chruby/chruby.sh

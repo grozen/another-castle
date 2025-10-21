@@ -44,7 +44,7 @@ ssh-add -K ~/.ssh/id_rsa 2>/dev/null
 setopt inc_append_history share_history
 
 # Customize the PATH
-export PATH=/opt/homebrew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:$PATH
+export PATH=/opt/homebrew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/opt/homebrew/opt/openjdk/bin:$PATH
 
 # Set up NVM
 export NVM_DIR=~/.nvm
@@ -72,7 +72,7 @@ esac
 # OS X specific exports
 if [ `uname`=='Darwin' ]; then
   export ANDROID_HOME="/Users/$DEFAULT_USER/android-sdk-macosx"
-  export JAVA_HOME=$(/usr/libexec/java_home)
+  export JAVA_HOME="/opt/homebrew/opt/openjdk/bin"
   export GOPATH="/Users/$DEFAULT_USER/go"
   export PATH=$PATH:$GOPATH/bin # Add gopath to path
 fi
@@ -116,8 +116,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# Created by `pipx` on 2022-10-25 15:49:50
-export PATH="$PATH:/Users/guy_rozen/.local/bin"
+# Configure poetry
+export POETRY_VIRTUALENVS_CREATE=true
+export POETRY_PACKAGE_MODE=false
+export POETRY_REPOSITORIES_FORTER_URL="https://artifactory.frdstr.com/artifactory/api/pypi/pypi/simple"
 
 # Use starship
 eval "$(starship init zsh)"

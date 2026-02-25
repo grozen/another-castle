@@ -8,9 +8,7 @@ beforehand.
 * [Zsh](https://www.zsh.org/)
 * [Neovim](https://neovim.io/)
 * The fonts from the `fonts` folder in this repo
-* [NVM](https://github.com/nvm-sh/nvm)
-* [chruby](https://github.com/postmodern/chruby)
-* [pyenv](https://github.com/pyenv/pyenv)
+* [mise](https://mise.jdx.dev/)
 * [SCM Breeze](https://github.com/scmbreeze/scm_breeze)
 * [zplug](https://github.com/zplug/zplug)
 * [vim-plug](https://github.com/junegunn/vim-plug) (Follow the installation instructions for Neovim)

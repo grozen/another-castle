@@ -46,29 +46,6 @@ setopt inc_append_history share_history
 # Customize the PATH
 export PATH=/opt/homebrew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/opt/homebrew/opt/openjdk/bin:$PATH
 
-# Set up NVM
-export NVM_DIR=~/.nvm
-case `uname` in
-  Darwin)
-    source $(brew --prefix nvm)/nvm.sh # Assuming NVM was installed using brew
-    ;;
-  Linux)
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-    ;;
-esac
-
-# Set up chruby
-case `uname` in
-  Darwin)
-    source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-    source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-    ;;
-  Linux)
-    source /usr/local/share/chruby/chruby.sh
-    source /usr/local/share/chruby/auto.sh
-    ;;
-esac
-
 # OS X specific exports
 if [ `uname`=='Darwin' ]; then
   export ANDROID_HOME="/Users/$DEFAULT_USER/android-sdk-macosx"
@@ -93,6 +70,11 @@ case `uname` in
     ;;
 esac
 
+# Add "gbk" command for deleting all branches except the specified one
+gbk() {
+  git branch --no-color | grep -v "$1" | xargs git branch -D
+}
+
 # Add Java home bin folder to path
 export PATH=$JAVA_HOME/bin:$PATH
 
@@ -111,10 +93,8 @@ export AWS_SDK_LOAD_CONFIG=1
 alias awslogin='aws --profile sso sso login'
 alias awslogout='aws --profile sso sso logout'
 
-# Init pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# Init mise (Python and other runtimes)
+eval "$(mise activate zsh)"
 
 # Configure poetry
 export POETRY_VIRTUALENVS_CREATE=true

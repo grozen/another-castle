@@ -23,13 +23,6 @@ zplug load
 
 ######
 
-export DEFAULT_USER=$(whoami)
-
-export LC_ALL=en_US.UTF-8
-export LC_CTYPE=UTF-8
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-
 # Configure autosuggestion highlight style
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4c4c4c"
 
@@ -43,43 +36,17 @@ ssh-add -K ~/.ssh/id_rsa 2>/dev/null
 # Share history between tabs
 setopt inc_append_history share_history
 
-# Customize the PATH
-export PATH=/opt/homebrew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/opt/homebrew/opt/openjdk/bin:$PATH
-
-# OS X specific exports
-if [ `uname`=='Darwin' ]; then
-  export ANDROID_HOME="/Users/$DEFAULT_USER/android-sdk-macosx"
-  export JAVA_HOME="/opt/homebrew/opt/openjdk/bin"
-  export GOPATH="/Users/$DEFAULT_USER/go"
-  export PATH=$PATH:$GOPATH/bin # Add gopath to path
-fi
-
-# OS specific default editor and SCM breeze
-case `uname` in
+# OS specific SCM breeze and aliases
+case "$(uname)" in
   Darwin)
-    export EDITOR='nvim'
     alias vi=$EDITOR
-
     [ -s "/Users/$DEFAULT_USER/.scm_breeze/scm_breeze.sh" ] && source "/Users/$DEFAULT_USER/.scm_breeze/scm_breeze.sh"
     ;;
   Linux)
-    # Set vi as the editor
-    export EDITOR='gvim -v'
-
+    alias vi=$EDITOR
     [ -s "/home/$DEFAULT_USER/.scm_breeze/scm_breeze.sh" ] && source "/home/$DEFAULT_USER/.scm_breeze/scm_breeze.sh"
     ;;
 esac
-
-# Add "gbk" command for deleting all branches except the specified one
-gbk() {
-  git branch --no-color | grep -v "$1" | xargs git branch -D
-}
-
-# Add Java home bin folder to path
-export PATH=$JAVA_HOME/bin:$PATH
-
-# Postgres data folder
-export PGDATA=/usr/local/var/postgres
 
 [ -f /Users/$DEFAULT_USER/.fzf.zsh ] && source /Users/$DEFAULT_USER/.fzf.zsh
 
@@ -88,18 +55,8 @@ alias fff="forter feature from -a"
 alias ffp="forter feature pr"
 alias ffc="forter feature create -n"
 
-export AWS_PROFILE="main-wrapped"
-export AWS_SDK_LOAD_CONFIG=1
 alias awslogin='aws --profile sso sso login'
 alias awslogout='aws --profile sso sso logout'
-
-# Init mise (Python and other runtimes)
-eval "$(mise activate zsh)"
-
-# Configure poetry
-export POETRY_VIRTUALENVS_CREATE=true
-export POETRY_PACKAGE_MODE=false
-export POETRY_REPOSITORIES_FORTER_URL="https://artifactory.frdstr.com/artifactory/api/pypi/pypi/simple"
 
 # Use starship
 eval "$(starship init zsh)"

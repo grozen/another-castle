@@ -23,6 +23,9 @@ zplug load
 
 ######
 
+# Ensure emacs keybindings (prevent plugins from switching to vi mode)
+bindkey -e
+
 # Configure autosuggestion highlight style
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4c4c4c"
 

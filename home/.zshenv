@@ -40,7 +40,11 @@ export POETRY_PACKAGE_MODE=false
 export POETRY_REPOSITORIES_FORTER_URL="https://artifactory.frdstr.com/artifactory/api/pypi/pypi/simple"
 
 # Init mise (Python and other runtimes)
-eval "$(mise activate zsh --shims)"
+if [[ -o interactive ]]; then
+  eval "$(mise activate zsh)"
+else
+  eval "$(mise activate zsh --shims)"
+fi
 
 # Stubs for scm_breeze functions, used by some tools in non-interactive shells
 token_quote() {

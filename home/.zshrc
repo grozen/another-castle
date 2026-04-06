@@ -63,3 +63,6 @@ alias awslogout='aws --profile sso sso logout'
 
 # Use starship
 eval "$(starship init zsh)"
+
+# Init mise (Python and other runtimes)
+eval "$(mise activate zsh)"

@@ -40,9 +40,7 @@ export POETRY_PACKAGE_MODE=false
 export POETRY_REPOSITORIES_FORTER_URL="https://artifactory.frdstr.com/artifactory/api/pypi/pypi/simple"
 
 # Init mise (Python and other runtimes)
-if [[ -o interactive ]]; then
-  eval "$(mise activate zsh)"
-else
+if [[ ! -o interactive ]]; then
   eval "$(mise activate zsh --shims)"
 fi
 
